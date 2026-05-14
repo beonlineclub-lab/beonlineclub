@@ -12,7 +12,6 @@ import {
   Clock,
   Users,
   Zap,
-  MessageCircle,
   Phone,
 } from "lucide-react";
 

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { CheckCircle2, ArrowRight, Phone, Clock, Star, Shield } from "lucide-react";
+import { ArrowRight, Phone, Clock, Star, Shield } from "lucide-react";
 
 // ─── Config — swap CTA_LINK to a Calendly URL when ready ─────────────────────
 const WA_NUMBER = "918000511720";

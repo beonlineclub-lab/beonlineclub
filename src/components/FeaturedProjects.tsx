@@ -74,9 +74,6 @@ function CardPattern({
   pattern: string;
   accent: string;
 }) {
-  const a = accent + "18";
-  const b = accent + "08";
-
   if (pattern === "fintech")
     return (
       <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
