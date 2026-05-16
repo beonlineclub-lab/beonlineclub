@@ -95,7 +95,7 @@ export default function Hero() {
         {/* Typewriter subheading */}
         <motion.div
           {...fadeUpProps(0.3)}
-          className="mb-10 h-8"
+          className="mb-10 min-h-[2rem] sm:h-8"
           style={{ fontSize: "clamp(1rem, 2.5vw, 1.25rem)" }}
         >
           <TypewriterText />
