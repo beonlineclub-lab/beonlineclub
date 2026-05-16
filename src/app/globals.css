@@ -68,7 +68,28 @@ body {
 .ticker-wrap {
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
 }
+
+.ticker-wrap::before,
+.ticker-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  pointer-events: none;
+  z-index: 2;
+}
+.ticker-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #0F1420, transparent);
+}
+.ticker-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #0F1420, transparent);
+}
+
 .ticker-track {
   display: inline-flex;
   animation: ticker-left 30s linear infinite;
