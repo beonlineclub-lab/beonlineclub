@@ -149,7 +149,7 @@ export default function Hero() {
         {/* Ticker strip */}
         <motion.div
           {...fadeUpProps(0.6)}
-          className="w-full max-w-3xl mx-auto rounded-xl overflow-hidden ticker-wrap"
+          className="w-[calc(100%-2rem)] max-w-3xl mx-auto rounded-xl overflow-hidden ticker-wrap"
           style={{
             background: "#0F1420",
             border: "1px solid #1E2535",
