@@ -60,6 +60,11 @@ body {
 }
 
 /* Ticker */
+@keyframes ticker-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .ticker-wrap {
   overflow: hidden;
   white-space: nowrap;
