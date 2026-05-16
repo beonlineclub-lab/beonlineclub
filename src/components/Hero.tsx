@@ -104,7 +104,7 @@ export default function Hero() {
         {/* CTA buttons */}
         <motion.div
           {...fadeUpProps(0.45)}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
         >
           <a
             href="#contact"
@@ -146,35 +146,29 @@ export default function Hero() {
           </a>
         </motion.div>
 
+        {/* Ticker strip */}
+        <motion.div
+          {...fadeUpProps(0.6)}
+          className="w-[calc(100%-2rem)] max-w-3xl mx-auto rounded-xl overflow-hidden ticker-wrap"
+          style={{
+            background: "#0F1420",
+            border: "1px solid #1E2535",
+            padding: "12px 0",
+          }}
+        >
+          <div className="ticker-track">
+            {tickerItems.map((item, i) => (
+              <span
+                key={i}
+                className="font-mono text-xs tracking-widest mx-4 sm:mx-8 whitespace-nowrap"
+                style={{ color: "#A0ADB8" }}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
-
-      {/* Ticker strip — outside padded content div so it controls its own margins */}
-      <motion.div
-        {...fadeUpProps(0.6)}
-        className="relative z-10 rounded-xl overflow-hidden ticker-wrap"
-        style={{
-          background: "#0F1420",
-          border: "1px solid #1E2535",
-          padding: "12px 0",
-          width: "calc(100% - 2rem)",
-          maxWidth: "48rem",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginBottom: "3.5rem",
-        }}
-      >
-        <div className="ticker-track">
-          {tickerItems.map((item, i) => (
-            <span
-              key={i}
-              className="font-mono text-xs tracking-widest mx-4 sm:mx-8 whitespace-nowrap"
-              style={{ color: "#A0ADB8" }}
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
