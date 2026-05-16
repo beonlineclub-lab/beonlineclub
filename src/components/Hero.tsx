@@ -69,11 +69,11 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl w-full mx-auto">
         {/* Top label */}
         <motion.div {...fadeUpProps(0)} className="mb-6">
           <span
-            className="font-mono text-sm tracking-[0.3em] uppercase"
+            className="font-mono text-xs sm:text-sm tracking-[0.12em] sm:tracking-[0.3em] uppercase"
             style={{ color: "#00F5FF" }}
           >
             [ FULL-STACK SOFTWARE STUDIO ]
@@ -84,7 +84,7 @@ export default function Hero() {
         <motion.h1
           {...fadeUpProps(0.15)}
           className="font-grotesk font-bold leading-tight mb-6"
-          style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", color: "#FFFFFF" }}
+          style={{ fontSize: "clamp(2rem, 7vw, 5rem)", color: "#FFFFFF" }}
         >
           BeOnline{" "}
           <span className="glow-cyan-text" style={{ color: "#00F5FF" }}>
@@ -104,11 +104,11 @@ export default function Hero() {
         {/* CTA buttons */}
         <motion.div
           {...fadeUpProps(0.45)}
-          className="flex flex-wrap items-center justify-center gap-4 mb-14"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
         >
           <a
             href="#contact"
-            className="font-grotesk font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+            className="font-grotesk font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center"
             style={{
               background: "#00F5FF",
               color: "#080B12",
@@ -126,7 +126,7 @@ export default function Hero() {
           </a>
           <a
             href="#work"
-            className="font-grotesk font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+            className="font-grotesk font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center"
             style={{
               border: "1.5px solid #00F5FF",
               color: "#00F5FF",
