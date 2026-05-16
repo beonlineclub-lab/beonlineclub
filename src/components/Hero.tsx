@@ -146,29 +146,33 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Ticker strip */}
-        <motion.div
-          {...fadeUpProps(0.6)}
-          className="max-w-3xl mx-auto rounded-xl overflow-hidden ticker-wrap"
-          style={{
-            background: "#0F1420",
-            border: "1px solid #1E2535",
-            padding: "12px 0",
-            width: "calc(100% - 2rem)",
-          }}
-        >
-          <div className="ticker-track">
-            {tickerItems.map((item, i) => (
-              <span
-                key={i}
-                className="font-mono text-xs tracking-widest mx-4 sm:mx-8 whitespace-nowrap"
-                style={{ color: "#A0ADB8" }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+        {/* Ticker strip — padded wrapper ensures 16px gap from edges on all sides */}
+        <div style={{ paddingLeft: "1rem", paddingRight: "1rem" }}>
+          <motion.div
+            {...fadeUpProps(0.6)}
+            className="rounded-xl overflow-hidden ticker-wrap"
+            style={{
+              background: "#0F1420",
+              border: "1px solid #1E2535",
+              padding: "12px 0",
+              maxWidth: "48rem",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            <div className="ticker-track">
+              {tickerItems.map((item, i) => (
+                <span
+                  key={i}
+                  className="font-mono text-xs tracking-widest mx-4 sm:mx-8 whitespace-nowrap"
+                  style={{ color: "#A0ADB8" }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
