@@ -160,7 +160,7 @@ export default function Hero() {
             {tickerItems.map((item, i) => (
               <span
                 key={i}
-                className="font-mono text-xs tracking-widest mx-8 whitespace-nowrap"
+                className="font-mono text-xs tracking-widest mx-4 sm:mx-8 whitespace-nowrap"
                 style={{ color: "#A0ADB8" }}
               >
                 {item}

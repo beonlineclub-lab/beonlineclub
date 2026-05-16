@@ -19,11 +19,11 @@ export default function TypewriterText() {
     let timeout: NodeJS.Timeout;
 
     if (!isDeleting && displayed.length < current.length) {
-      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 45);
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 28);
     } else if (!isDeleting && displayed.length === current.length) {
-      timeout = setTimeout(() => setIsDeleting(true), 2200);
+      timeout = setTimeout(() => setIsDeleting(true), 1400);
     } else if (isDeleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 22);
+      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 14);
     } else if (isDeleting && displayed.length === 0) {
       setIsDeleting(false);
       setPhraseIndex((i) => (i + 1) % phrases.length);
