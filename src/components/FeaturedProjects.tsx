@@ -412,8 +412,8 @@ export default function FeaturedProjects() {
           style={{ background: "#0A0E18", border: "1px solid #1E2535" }}
         >
           <p className="font-mono text-xs tracking-[0.3em] mb-3" style={{ color: "#00F5FF" }}>
-            // READY TO BUILD?
-          </p>
+            {"// READY TO BUILD?"}
+</p>
           <h3 className="font-grotesk font-bold mb-3" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "#FFFFFF" }}>
             Want to build something like this?
           </h3>
