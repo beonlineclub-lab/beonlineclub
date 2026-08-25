@@ -2,9 +2,11 @@
 
 import { useState, useRef, FormEvent } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 
-type FormState = "idle" | "sending" | "success";
+type FormState = "idle" | "success";
+
+const WHATSAPP_NUMBER = "917011881097";
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor">
@@ -118,30 +120,30 @@ export default function Contact() {
   const inView = useInView(headerRef, { once: true, margin: "-80px" });
 
   const [formState, setFormState] = useState<FormState>("idle");
-  const [fields, setFields] = useState({
-    name: "", email: "", company: "", message: "",
-  });
+  const [fields, setFields] = useState({ name: "", message: "" });
 
   const set = (key: keyof typeof fields) => (v: string) =>
     setFields((f) => ({ ...f, [key]: v }));
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setFormState("sending");
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
-      });
+    const text = [
+      "Hi BeOnline Club! 👋",
+      "",
+      `*Name:* ${fields.name.trim()}`,
+      "",
+      "*What I need:*",
+      fields.message.trim(),
+    ].join("\n");
 
-      if (!res.ok) throw new Error("Failed");
-      setFormState("success");
-    } catch {
-      setFormState("idle");
-      alert("Something went wrong. Please email us directly at hello@beonline.club");
-    }
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    setFormState("success");
   };
 
   return (
@@ -255,16 +257,24 @@ export default function Contact() {
                 className="py-12 flex flex-col gap-3"
               >
                 <p className="font-mono text-sm" style={{ color: "#3E5070" }}>
-                  $ send_message --to hello@beonline.club
+                  $ send_message --via whatsapp +91 70118 81097
                 </p>
                 <p className="font-mono text-base" style={{ color: "#00F5FF" }}>
-                  &gt; Connecting to server...
+                  &gt; Opening WhatsApp...
                 </p>
                 <p className="font-mono text-base" style={{ color: "#39FF14" }}>
-                  &gt; Message received. We&apos;ll be in touch soon. ✓
+                  &gt; Just hit send in the chat and we&apos;ll take it from there. ✓
                 </p>
                 <p className="font-mono text-sm mt-2" style={{ color: "#3E5070" }}>
-                  Expected response time: &lt; 24h
+                  Didn&apos;t open?{" "}
+                  <a
+                    href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#00F5FF" }}
+                  >
+                    Chat with us directly →
+                  </a>
                 </p>
               </motion.div>
             ) : (
@@ -278,23 +288,7 @@ export default function Contact() {
                   onChange={set("name")}
                 />
                 <TerminalField
-                  prompt="Your email:"
-                  name="email"
-                  type="email"
-                  placeholder="john@startup.com"
-                  required
-                  value={fields.email}
-                  onChange={set("email")}
-                />
-                <TerminalField
-                  prompt="Company:"
-                  name="company"
-                  placeholder="Acme Inc. (optional)"
-                  value={fields.company}
-                  onChange={set("company")}
-                />
-                <TerminalField
-                  prompt="Tell us about your project:"
+                  prompt="Your requirement:"
                   name="message"
                   placeholder="We need a mobile app that..."
                   required
@@ -305,36 +299,24 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={formState === "sending"}
                   className="mt-2 flex items-center gap-3 font-mono text-sm px-6 py-3 rounded-lg transition-all duration-300 self-start"
                   style={{
-                    background: formState === "sending" ? "#00F5FF22" : "#00F5FF",
-                    color: formState === "sending" ? "#00F5FF" : "#080B12",
+                    background: "#00F5FF",
+                    color: "#080B12",
                     border: "1px solid #00F5FF",
-                    boxShadow: formState === "sending" ? "none" : "0 0 20px #00F5FF33",
-                    cursor: formState === "sending" ? "not-allowed" : "pointer",
+                    boxShadow: "0 0 20px #00F5FF33",
+                    cursor: "pointer",
                   }}
                   onMouseEnter={(e) => {
-                    if (formState !== "sending") {
-                      e.currentTarget.style.boxShadow = "0 0 32px #00F5FF66";
-                    }
+                    e.currentTarget.style.boxShadow = "0 0 32px #00F5FF66";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = "0 0 20px #00F5FF33";
                   }}
                 >
-                  {formState === "sending" ? (
-                    <>
-                      <span className="animate-pulse">Sending</span>
-                      <span className="animate-cursor-blink">_</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send size={14} />
-                      Send Message
-                      <span className="animate-cursor-blink">_</span>
-                    </>
-                  )}
+                  <MessageCircle size={14} />
+                  Send on WhatsApp
+                  <span className="animate-cursor-blink">_</span>
                 </button>
 
                 {/* Calendly secondary CTA */}
