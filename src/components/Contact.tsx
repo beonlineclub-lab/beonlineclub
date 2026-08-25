@@ -31,7 +31,7 @@ const socialLinks = [
 ];
 
 const contactMeta = [
-  { icon: Mail, label: "beonlineclub@gmail.com", href: "mailto:beonlineclub@gmail.com" },
+  { icon: Mail, label: "hello@beonline.club", href: "mailto:hello@beonline.club" },
   { icon: MessageCircle, label: "WhatsApp +91 70118 81097", href: "https://wa.me/917011881097" },
   { icon: MapPin, label: "India · Available Worldwide", href: null },
 ];
@@ -140,7 +140,7 @@ export default function Contact() {
       setFormState("success");
     } catch {
       setFormState("idle");
-      alert("Something went wrong. Please email us directly at beonlineclub@gmail.com");
+      alert("Something went wrong. Please email us directly at hello@beonline.club");
     }
   };
 
@@ -203,6 +203,29 @@ export default function Contact() {
           </motion.p>
         </div>
 
+        {/* How We Work — 4-step process */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {[
+            { step: "01", label: "Discovery", desc: "We learn your goals, constraints, and users in a focused session." },
+            { step: "02", label: "Proposal", desc: "You get a clear scope, timeline, and fixed-price quote — no surprises." },
+            { step: "03", label: "Sprint Build", desc: "Iterative two-week sprints with demos. You see progress, not promises." },
+            { step: "04", label: "Launch", desc: "We handle deployment, QA, and handoff. Your product goes live." },
+          ].map(({ step, label, desc }, i) => (
+            <motion.div
+              key={step}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.25 + i * 0.08 }}
+              className="rounded-xl p-5"
+              style={{ background: "#0A0E18", border: "1px solid #1E2535" }}
+            >
+              <p className="font-mono text-xs mb-2" style={{ color: "#00F5FF" }}>{step}</p>
+              <p className="font-grotesk font-semibold text-sm mb-2" style={{ color: "#FFFFFF" }}>{label}</p>
+              <p className="font-sans text-xs leading-relaxed" style={{ color: "#3E5070" }}>{desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
 
@@ -232,7 +255,7 @@ export default function Contact() {
                 className="py-12 flex flex-col gap-3"
               >
                 <p className="font-mono text-sm" style={{ color: "#3E5070" }}>
-                  $ send_message --to beonlineclub@gmail.com
+                  $ send_message --to hello@beonline.club
                 </p>
                 <p className="font-mono text-base" style={{ color: "#00F5FF" }}>
                   &gt; Connecting to server...
@@ -313,6 +336,30 @@ export default function Contact() {
                     </>
                   )}
                 </button>
+
+                {/* Calendly secondary CTA */}
+                <div className="mt-5 flex items-center gap-3">
+                  <div className="flex-1 h-px" style={{ background: "#1E2535" }} />
+                  <span className="font-mono text-xs" style={{ color: "#3E5070" }}>or</span>
+                  <div className="flex-1 h-px" style={{ background: "#1E2535" }} />
+                </div>
+                <a
+                  href="https://calendly.com/beonlineclub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center gap-2 font-mono text-sm transition-colors duration-200 self-start"
+                  style={{ color: "#A0ADB8" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#00F5FF")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#A0ADB8")}
+                >
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"/>
+                  </svg>
+                  Book a free 30-min strategy call →
+                </a>
+                <p className="font-mono text-xs mt-1.5" style={{ color: "#3E5070" }}>
+                  We sign NDAs on request · your project details stay confidential
+                </p>
               </form>
             )}
           </motion.div>

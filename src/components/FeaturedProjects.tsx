@@ -11,6 +11,7 @@ const projects = [
     industry: "Fintech",
     description:
       "End-to-end student loan onboarding and management system built for a registered NBFC — from KYC to disbursement.",
+    outcome: "Full NBFC compliance · KYC → disbursement → repayment in one platform",
     stack: ["React", "Node.js", "PostgreSQL", "AWS", "Razorpay"],
     gradient: "linear-gradient(135deg, #0a1628 0%, #0d2240 40%, #003366 100%)",
     accent: "#00F5FF",
@@ -23,6 +24,7 @@ const projects = [
     industry: "SaaS / Events",
     description:
       "Full-featured wedding management platform used by planners to coordinate vendors, budgets, and timelines seamlessly.",
+    outcome: "Multi-vendor coordination · real-time budget tracking · timeline management",
     stack: ["Next.js", "MongoDB", "Stripe", "Vercel"],
     gradient: "linear-gradient(135deg, #1a0a1e 0%, #2d1040 40%, #4a1060 100%)",
     accent: "#C084FC",
@@ -35,6 +37,7 @@ const projects = [
     industry: "Health & Wellness",
     description:
       "Custom yoga and wellness platform with session booking, instructor profiles, and live class streaming.",
+    outcome: "Live class streaming + booking operational on iOS, Android & web",
     stack: ["React", "Firebase", "Node.js", "Razorpay"],
     gradient: "linear-gradient(135deg, #051a10 0%, #0a3020 40%, #0d4a2a 100%)",
     accent: "#39FF14",
@@ -47,6 +50,7 @@ const projects = [
     industry: "E-commerce",
     description:
       "Hyperlocal marketplace connecting dairy farms and consumers — subscriptions, daily delivery, and product discovery.",
+    outcome: "Subscription model with automated daily delivery routing live at launch",
     stack: ["Next.js", "Node.js", "MongoDB", "AWS"],
     gradient: "linear-gradient(135deg, #1a1000 0%, #2e1d00 40%, #3d2800 100%)",
     accent: "#FBBF24",
@@ -59,6 +63,7 @@ const projects = [
     industry: "Luxury E-commerce",
     description:
       "Premium ceramics brand storefront with curated collections, custom product configurator, and white-glove checkout.",
+    outcome: "Custom product configurator + Shopify storefront · zero launch issues",
     stack: ["Next.js", "Shopify", "Tailwind CSS", "Vercel"],
     gradient: "linear-gradient(135deg, #12100e 0%, #1c1814 40%, #2a2218 100%)",
     accent: "#D4A843",
@@ -272,11 +277,19 @@ function ProjectCard({
               {project.name}
             </h3>
             <p
-              className="font-sans text-sm mb-4 leading-relaxed max-w-md"
+              className="font-sans text-sm mb-3 leading-relaxed max-w-md"
               style={{ color: "#A0ADB8", lineHeight: "1.65" }}
             >
               {project.description}
             </p>
+
+            {/* Outcome metric */}
+            <div className="flex items-start gap-2 mb-4">
+              <span style={{ color: project.accent, fontSize: "0.75rem", lineHeight: "1.4", marginTop: "1px" }}>✓</span>
+              <p className="font-mono text-xs leading-relaxed" style={{ color: project.accent, opacity: 0.85 }}>
+                {project.outcome}
+              </p>
+            </div>
 
             {/* Stack tags */}
             <div className="flex flex-wrap gap-2">
@@ -395,21 +408,31 @@ export default function FeaturedProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-14"
+          className="mt-16 rounded-2xl px-10 py-12 text-center"
+          style={{ background: "#0A0E18", border: "1px solid #1E2535" }}
         >
+          <p className="font-mono text-xs tracking-[0.3em] mb-3" style={{ color: "#00F5FF" }}>
+            // READY TO BUILD?
+          </p>
+          <h3 className="font-grotesk font-bold mb-3" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "#FFFFFF" }}>
+            Want to build something like this?
+          </h3>
+          <p className="font-sans text-sm mb-8 max-w-lg mx-auto" style={{ color: "#A0ADB8", lineHeight: "1.7" }}>
+            Tell us what you&apos;re building. We&apos;ll respond within 24 hours with a clear path forward — no sales pitch, no fluff.
+          </p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 font-grotesk font-semibold text-sm tracking-wide group transition-all duration-300"
-            style={{ color: "#00F5FF" }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.textShadow = "0 0 16px #00F5FF88")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.textShadow = "none")
-            }
+            className="inline-flex items-center gap-2 font-grotesk font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105"
+            style={{
+              background: "#00F5FF",
+              color: "#080B12",
+              fontSize: "1rem",
+              boxShadow: "0 0 24px #00F5FF44",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.boxShadow = "0 0 40px #00F5FF88")}
+            onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "0 0 24px #00F5FF44")}
           >
-            View Full Portfolio
-            <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+            Start a Project →
           </a>
         </motion.div>
       </div>

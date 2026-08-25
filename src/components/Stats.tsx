@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { value: 50, suffix: "+", label: "Projects Delivered", color: "#00F5FF" },
-  { value: 30, suffix: "+", label: "Happy Clients", color: "#7B2FFF" },
-  { value: 5,  suffix: "+", label: "Years Experience", color: "#00F5FF" },
-  { value: 10, suffix: "+", label: "Industries Served", color: "#7B2FFF" },
-  { value: 99, suffix: "%", label: "Client Retention", color: "#00F5FF" },
+  { value: 500, suffix: "+", label: "Projects Delivered", color: "#00F5FF" },
+  { value: 30,  suffix: "+", label: "Happy Clients",      color: "#7B2FFF" },
+  { value: 5,   suffix: "+", label: "Years Experience",   color: "#00F5FF" },
+  { value: 10,  suffix: "+", label: "Industries Served",  color: "#7B2FFF" },
+  { value: 99,  suffix: "%", label: "Client Retention",   color: "#00F5FF" },
 ];
 
 function useCountUp(target: number, duration: number, active: boolean) {

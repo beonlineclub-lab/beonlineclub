@@ -86,9 +86,9 @@ export default function Hero() {
           className="font-grotesk font-bold leading-tight mb-6"
           style={{ fontSize: "clamp(2rem, 7vw, 5rem)", color: "#FFFFFF" }}
         >
-          BeOnline{" "}
+          Full-Stack Engineering{" "}
           <span className="glow-cyan-text" style={{ color: "#00F5FF" }}>
-            with us
+            for Startups.
           </span>
         </motion.h1>
 
