@@ -5,6 +5,7 @@ import { useRef } from "react";
 
 // Real clients with styled text logos
 const clients = [
+  { name: "Mikado Coffee Work", tag: "F&B", accent: "#FF8A3D", url: "https://app.mikadocoffeework.com/" },
   { name: "Flyhi Finance", tag: "FINTECH", accent: "#00F5FF", url: "https://flyhifinance.com/" },
   { name: "Wedding Manual", tag: "SAAS", accent: "#C084FC", url: "https://theweddingmanual.com/" },
   { name: "YogaKaro", tag: "WELLNESS", accent: "#39FF14", url: "https://m.yogakro.com/" },

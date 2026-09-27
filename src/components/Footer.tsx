@@ -28,6 +28,7 @@ const footerLinks = {
     { label: "Tech Consulting", href: "#services" },
   ],
   Work: [
+    { label: "Mikado Coffee Work", href: "https://app.mikadocoffeework.com/", external: true },
     { label: "Flyhi Finance", href: "https://flyhifinance.com/", external: true },
     { label: "Wedding Manual", href: "https://theweddingmanual.com/", external: true },
     { label: "YogaKaro", href: "https://m.yogakro.com/", external: true },

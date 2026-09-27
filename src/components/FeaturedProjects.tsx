@@ -6,6 +6,20 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    name: "Mikado Coffee Work",
+    url: "https://app.mikadocoffeework.com/",
+    industry: "Food & Beverage",
+    description:
+      "Full-scale web app for a specialty coffee business — ordering, customer accounts, and back-office operations in one platform.",
+    outcome: "Ordering + operations unified in a single platform · live in production",
+    stack: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
+    gradient: "linear-gradient(135deg, #140c06 0%, #24150a 40%, #3a200e 100%)",
+    accent: "#FF8A3D",
+    pattern: "coffee",
+    featured: true,
+    wide: true,
+  },
+  {
     name: "Flyhi Finance",
     url: "https://flyhifinance.com/",
     industry: "Fintech",
@@ -155,6 +169,23 @@ function CardPattern({
       </svg>
     );
 
+  if (pattern === "coffee")
+    return (
+      <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="cg1" cx="75%" cy="35%">
+            <stop offset="0%" stopColor={accent} stopOpacity="0.14" />
+            <stop offset="100%" stopColor={accent} stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#cg1)" />
+        {[30, 60, 90, 120, 150].map((r, i) => (
+          <ellipse key={i} cx="75%" cy="35%" rx={r * 1.4} ry={r} fill="none" stroke={accent} strokeOpacity="0.07" strokeWidth="1" />
+        ))}
+        <line x1="0" y1="75%" x2="100%" y2="75%" stroke={accent} strokeOpacity="0.05" strokeWidth="1" strokeDasharray="4 10" />
+      </svg>
+    );
+
   // luxury
   return (
     <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice">
@@ -207,7 +238,13 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.65, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className={featured ? "col-span-1 md:col-span-2" : "col-span-1"}
+      className={
+        project.wide
+          ? "col-span-1 md:col-span-2 lg:col-span-3"
+          : featured
+            ? "col-span-1 md:col-span-2"
+            : "col-span-1"
+      }
     >
       <div
         ref={cardRef}
@@ -390,7 +427,7 @@ export default function FeaturedProjects() {
           </motion.p>
         </div>
 
-        {/* Grid: featured (span-2) + 4 regular */}
+        {/* Grid: latest (full width) + featured (span-2) + 4 regular */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, i) => (
             <ProjectCard
