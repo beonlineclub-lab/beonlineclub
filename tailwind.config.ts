@@ -18,6 +18,16 @@ const config: Config = {
         border: "#1E2535",
         "red-cta": "#FF0044",
         "neon-green": "#39FF14",
+        // BeOnline Express (light homepage)
+        "ex-bg": "#FFFDF6",
+        "ex-ink": "#111111",
+        "ex-muted": "#5B5B5B",
+        "ex-line": "#ECE7D8",
+        "ex-yellow": "#F8CB46",
+        "ex-yellow-soft": "#FFF4CC",
+        "ex-green": "#0C831F",
+        "ex-green-soft": "#E7F6EA",
+        "ex-wa": "#25D366",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],

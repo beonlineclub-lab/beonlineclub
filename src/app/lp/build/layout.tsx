@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
-  title: "Got a Tech Idea? We'll Build It. | BeOnline.club",
+  title: { absolute: "Got a Tech Idea? We'll Build It. | BeOnline.club" },
   description:
     "Stuck on where to start, who to trust, or how to ship fast? We're the tech team that turns your idea into a real product — without the jargon, delays, or agency runaround.",
   robots: { index: false },
@@ -27,6 +29,8 @@ export default function BuildLPLayout({ children }: { children: React.ReactNode 
         fbq('track', 'PageView');
       `}</Script>
       */}
+      <CustomCursor />
+      <Navbar />
       {children}
     </>
   );

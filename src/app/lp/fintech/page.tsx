@@ -17,7 +17,7 @@ import {
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const WA_NUMBER = "918000511720";
+const WA_NUMBER = "919571058866";
 const WA_MESSAGE = encodeURIComponent(
   "Hi BeOnline.club, I saw your ad and I'm interested in building a fintech product. Can we have a quick call?"
 );
@@ -170,7 +170,7 @@ export default function FintechLP() {
             onMouseLeave={(e) => (e.currentTarget.style.color = "#A0ADB8")}
           >
             <Phone size={14} />
-            +91 80005 11720
+            +91 957105 8866
           </a>
           <WhatsAppCTA label="Chat on WhatsApp" size="md" trackingLabel="header" />
         </div>
@@ -608,7 +608,7 @@ export default function FintechLP() {
                 }}
               >
                 <Phone size={15} />
-                +91 80005 11720
+                +91 957105 8866
               </a>
             </div>
 

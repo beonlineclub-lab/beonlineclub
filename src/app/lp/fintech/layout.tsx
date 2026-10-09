@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
-  title: "Fintech Engineering for NBFCs & Lending Startups | BeOnline.club",
+  title: { absolute: "Fintech Engineering for NBFCs & Lending Startups | BeOnline.club" },
   description:
     "We've built end-to-end loan origination, KYC, and management systems for live NBFCs. Personal loans, education loans, MSME — compliant and production-ready.",
   robots: { index: false }, // Don't index ad landing pages
@@ -31,6 +33,8 @@ export default function FintechLPLayout({
         `}
       </Script>
       */}
+      <CustomCursor />
+      <Navbar />
       {children}
     </>
   );

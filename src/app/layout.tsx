@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,18 +21,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BeOnline.club — Full-Stack Software Studio for Startups",
+  title: {
+    default: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
+    template: "%s | BeOnline.club",
+  },
   description:
-    "Full-stack engineering for startups — web & mobile apps, AI automation, cloud infrastructure, and design. One team. No agency juggling. Ship fast.",
+    "Still running your business on Excel? Get your own custom software — orders, stock, billing, staff — live in 7 days, from ₹9,999. We do everything.",
   keywords: [
-    "full stack development agency for startups",
-    "MVP development company",
-    "startup app development",
-    "web app development company India",
-    "AI automation for startups",
-    "SaaS development company",
-    "hire full stack developers",
-    "software development studio",
+    "custom software for small business India",
+    "Excel to software",
+    "billing and inventory software for manufacturers",
+    "garment manufacturing software",
+    "affordable software development company India",
+    "business software in 7 days",
+    "MSME software",
+    "MVP development in 7 days",
   ],
   metadataBase: new URL("https://www.beonline.club"),
   alternates: {
@@ -43,24 +44,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.beonline.club/",
-    title: "BeOnline.club — Full-Stack Software Studio for Startups",
+    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
     description:
-      "One team. Full stack. No agency juggling. We design, build, and launch your startup's product — from idea to live, in weeks.",
+      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹9,999.",
     siteName: "BeOnline.club",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BeOnline.club — Full-Stack Software Studio for Startups",
+        alt: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BeOnline.club — Full-Stack Software Studio for Startups",
+    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
     description:
-      "One team. Full stack. No agency juggling. We design, build, and launch your startup's product — from idea to live, in weeks.",
+      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹9,999.",
     images: ["/og-image.png"],
   },
 };
@@ -83,9 +84,9 @@ export default function RootLayout({
               "@type": "Organization",
               name: "BeOnline.club",
               url: "https://www.beonline.club",
-              logo: "https://invite.theweddingmanual.com/favicon.ico",
+              logo: "https://www.beonline.club/favicon.ico",
               description:
-                "Full-stack software studio for startups — web & mobile apps, AI automation, cloud infrastructure, and design.",
+                "Affordable custom business software for Indian MSMEs and startups — live in 7 days, from ₹9,999.",
               contactPoint: {
                 "@type": "ContactPoint",
                 email: "hello@beonline.club",
@@ -99,8 +100,6 @@ export default function RootLayout({
             }),
           }}
         />
-        <CustomCursor />
-        <Navbar />
         {children}
       </body>
     </html>

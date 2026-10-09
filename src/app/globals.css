@@ -117,3 +117,13 @@ body {
   background: #00F5FF33;
   color: #00F5FF;
 }
+
+/* ── BeOnline Express (light homepage) ───────────────────────────────────── */
+body:has(.theme-express) {
+  background-color: #FFFDF6;
+  color: #111111;
+}
+.theme-express ::selection {
+  background: #F8CB46;
+  color: #111111;
+}

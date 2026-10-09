@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight, Phone, Clock, Star, Shield } from "lucide-react";
 
 // ─── Config — swap CTA_LINK to a Calendly URL when ready ─────────────────────
-const WA_NUMBER = "918000511720";
+const WA_NUMBER = "919571058866";
 const WA_MESSAGE = encodeURIComponent(
   "Hi BeOnline.club! I saw your ad and I have a tech idea I'd like to discuss. Can we hop on a quick call?"
 );
@@ -221,7 +221,7 @@ export default function BuildLP() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "#A0ADB8")}
             >
               <Phone size={14} />
-              +91 80005 11720
+              +91 957105 8866
             </a>
           </motion.div>
         </div>
