@@ -16,8 +16,8 @@ export default function CaseStudy() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           kicker="Real business, real software"
-          title="A ₹5–6 crore suit manufacturer, moved from Excel to their own software."
-          sub="Every suit is now tracked from the first measurement to the final delivery."
+          title="A ₹5–6 crore cloth manufacturer, moved from Excel to their own software."
+          sub="Every piece is now tracked from the first measurement to the final delivery."
         />
 
         {/* Workflow pipeline */}

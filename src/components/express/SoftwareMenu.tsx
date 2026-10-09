@@ -71,6 +71,23 @@ export default function SoftwareMenu({ showHeading = true, moreHref }: { showHea
             </div>
           ))}
         </div>
+        <Link
+          href="/ecommerce-sellers"
+          className="mt-4 flex flex-col items-start gap-3 rounded-2xl bg-ex-ink p-5 text-white transition-transform hover:-translate-y-0.5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+        >
+          <span className="flex items-center gap-4">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-ex-yellow text-2xl" aria-hidden>
+              🛒
+            </span>
+            <span>
+              <span className="block font-grotesk text-lg font-bold">Sell on Amazon, Flipkart, Myntra or Meesho?</span>
+              <span className="block text-sm text-white/70">One stock across every channel, no missed dispatch deadlines, returns and payouts reconciled.</span>
+            </span>
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-1 font-grotesk font-bold text-ex-yellow">
+            See seller software <ArrowRight size={16} />
+          </span>
+        </Link>
         {moreHref && <MoreLink href={moreHref} label="Explore every industry" />}
       </div>
     </section>

@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/software", 0.9],
     ["/pricing", 0.9],
     ["/startups", 0.9],
+    ["/ecommerce-sellers", 0.9],
     ["/why-beonline", 0.8],
   ];
   return [

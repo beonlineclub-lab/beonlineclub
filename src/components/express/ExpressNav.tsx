@@ -10,6 +10,7 @@ const links = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Software Menu", href: "/software" },
   { label: "Pricing", href: "/pricing" },
+  { label: "For Sellers", href: "/ecommerce-sellers" },
   { label: "For Startups", href: "/startups" },
   { label: "Why BeOnline", href: "/why-beonline" },
 ];
