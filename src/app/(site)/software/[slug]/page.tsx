@@ -48,7 +48,7 @@ export default function KitPage({ params }: Props) {
       >
         <WhatsAppButton label="Get a free demo" message={message} />
         <span className="font-semibold text-ex-muted">
-          from <strong className="font-grotesk text-xl text-ex-ink">{inr(kit.from)}</strong>
+          from <strong className="font-grotesk text-xl text-ex-ink">{inr(kit.from)} / month</strong>
         </span>
       </PageHero>
 

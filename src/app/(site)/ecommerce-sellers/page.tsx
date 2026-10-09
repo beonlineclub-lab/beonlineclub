@@ -20,6 +20,7 @@ import {
   sellerSteps,
   sellerTrust,
 } from "@/lib/ecommerce";
+import { sellerCase } from "@/lib/caseStudies";
 import { waLink } from "@/lib/express";
 import { pageMeta } from "@/lib/seo";
 
@@ -257,6 +258,11 @@ export default function EcommerceSellersPage() {
                 We&apos;re taking on our first {FOUNDING_SPOTS_TOTAL} marketplace sellers at a founding price. In return, you share honest
                 feedback and let us publish your before-and-after results.
               </p>
+              {!sellerCase && (
+                <p className="mt-2 max-w-2xl text-sm font-semibold text-ex-ink">
+                  Our first seller case study, with real numbers, will be published right here.
+                </p>
+              )}
             </div>
             <a
               href={waLink("Hi BeOnline! I'd like to apply for the Founding Seller Program. I sell on __, around __ orders a day.")}
@@ -271,7 +277,7 @@ export default function EcommerceSellersPage() {
         </div>
       </section>
 
-      <CaseStudy />
+      {sellerCase && <CaseStudy study={sellerCase} />}
 
       {/* Pricing */}
       <section id="pricing" className="bg-ex-ink py-16 text-white sm:py-24">
