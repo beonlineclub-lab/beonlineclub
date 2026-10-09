@@ -54,7 +54,7 @@ export const modules: Module[] = [
 
 export const BASE_SETUP = 49999;
 export const BASE_MONTHLY = 4999;
-export const STARTER_INCLUDED = 3; // modules included in the ₹9,999 base
+export const STARTER_INCLUDED = 3; // modules included in the ₹49,999 base
 export const DELIVERY_DAYS = 7;
 
 // ─── Industry kits ("Software Menu") ──────────────────────────────────────────
@@ -227,7 +227,7 @@ export const commitments = [
 export const comparison = {
   cols: ["BeOnline", "Typical software company", "Freelancer"],
   rows: [
-    { k: "Starting price", v: ["₹9,999", "₹5 lakh+", "Low, but unpredictable"] },
+    { k: "Starting price", v: ["₹49,999", "₹5 lakh+", "Low, but unpredictable"] },
     { k: "First working version", v: ["7 days", "3–6 months", "Depends on the person"] },
     { k: "Free demo before paying", v: ["Yes", "Rarely", "Rarely"] },
     { k: "Hosting, backups & security", v: ["Included", "Separate contract", "Usually your problem"] },

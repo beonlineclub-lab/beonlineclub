@@ -69,7 +69,7 @@ export const sellerComparison = {
   cols: ["Excel", "Big multichannel tools", "BeOnline"],
   rows: [
     { label: "Fits how your team works", values: ["Somewhat", "You adapt to the tool", "Built around your workflow"] },
-    { label: "Cost for a 5–50 person team", values: ["Hidden in staff hours", "High, per user / per order", "Fixed, from ₹49,999 + monthly"] },
+    { label: "Cost for a 5–50 person team", values: ["Hidden in staff hours", "High, per user / per order", "Fixed, from ₹79,999 + monthly"] },
     { label: "Time to go live", values: ["—", "Weeks of onboarding", "7 days"] },
     { label: "Changes when you need them", values: ["Whoever knows the formulas", "Feature request queue", "Weekly updates, on WhatsApp"] },
     { label: "A real person to talk to", values: ["—", "Ticket support", "One named contact"] },

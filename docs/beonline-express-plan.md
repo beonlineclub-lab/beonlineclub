@@ -1,7 +1,7 @@
 # BeOnline Express — "Excel se Software, 7 din mein"
 
 ## Context
-beonline.club currently presents itself as a dark-neon "Full-Stack Engineering for Startups" studio. The real opportunity (seen while building software for a ₹5–6 Cr suit manufacturer) is the huge number of Indian MSMEs that run on Excel and see software companies as expensive and out of reach. The goal: reposition beonline.club as the **most reachable, affordable, fastest** software provider, starting at ₹9,999 with a live v1 in 7 days. The homepage gets replaced; the startup offer becomes a secondary lane.
+beonline.club currently presents itself as a dark-neon "Full-Stack Engineering for Startups" studio. The real opportunity (seen while building software for a ₹5–6 Cr suit manufacturer) is the huge number of Indian MSMEs that run on Excel and see software companies as expensive and out of reach. The goal: reposition beonline.club as the **most reachable, affordable, fastest** software provider, starting at ₹49,999 with a live v1 in 7 days. The homepage gets replaced; the startup offer becomes a secondary lane.
 
 Decisions made: replace the homepage · bright Blinkit-like look · English with Hinglish hooks · promise = **live v1 in 7 days, then weekly updates, backed by a guarantee**.
 
@@ -17,10 +17,10 @@ Blinkit does not deliver *everything* in 10 minutes. It delivers a **curated cat
 | Limited SKUs, shown with ETAs | **Software Menu**: industry kits (Garment/Textile manufacturing, Traders & Distributors, Clinics, Coaching institutes, Restaurants/Cloud kitchens, Retail shops, Service businesses), each with "from ₹X · live in 7 days" |
 | Cart with a live total and ETA | **"Build your software" configurator**: tick modules, see the one-time price, monthly price and delivery date instantly |
 | Live order tracking | **Day 0→7 tracker**: the customer sees progress (and gets it on WhatsApp) |
-| Tiny minimum order, delivery fee | **₹9,999 entry**, then a small monthly fee (hosting, backups, support, updates included) |
+| Tiny minimum order, delivery fee | **₹49,999 entry**, then a small monthly fee (hosting, backups, support, updates included) |
 | "Delivered in X min" guarantee | **7-day go-live guarantee**: miss it and the first 3 months are free (the exact terms are yours to set) |
 
-**Core offer, stated plainly:** *"Send us your Excel on WhatsApp. Get a free demo of your software in 48 hours. Go live in 7 days. From ₹9,999."*
+**Core offer, stated plainly:** *"Send us your Excel on WhatsApp. Get a free demo of your software in 48 hours. Go live in 7 days. From ₹49,999."*
 
 The **"WhatsApp your Excel → 48-hour free demo"** hook is the key conversion idea. It removes every barrier: no brief to write, no meeting, no jargon. The owner forwards the files they already have.
 
@@ -28,14 +28,14 @@ The **"WhatsApp your Excel → 48-hour free demo"** hook is the key conversion i
 
 **Honest guardrails I'd build into the messaging:**
 - Promise "live v1 in 7 days", not "full product in 7 days". Weekly updates after that show visible momentum.
-- The ₹9,999 plan needs a clearly defined scope (e.g. up to 3 modules, 5 users). Otherwise every lead expects ₹1 Cr of software for ₹9,999.
+- The ₹49,999 plan needs a clearly defined scope (e.g. up to 3 modules, 5 users). Otherwise every lead expects ₹1 Cr of software for ₹49,999.
 - Remove unverifiable claims from the current site ("Clutch Top Developer", "500+ projects", "10+ countries") unless they're true. MSME owners buy on trust, and the suit-manufacturer story is worth more than any badge.
 - Startups/MVP is a crowded market (AI app builders, freelancers). Keep it as a secondary lane that links to the existing [/lp/build](src/app/lp/build/page.tsx) rather than splitting the homepage message.
 
 **Proposed pricing** (placeholders in one config file so you can edit them):
 | Plan | One-time | Monthly | Scope | Live in |
 |---|---|---|---|---|
-| Starter | ₹9,999 | ₹999 | up to 3 modules, 5 users, Excel import | 7 days |
+| Starter | ₹49,999 | ₹999 | up to 3 modules, 5 users, Excel import | 7 days |
 | Business | ₹49,999 | ₹2,999 | up to 8 modules, 25 users, WhatsApp alerts, reports | 7 days (v1) |
 | Custom | from ₹2 L | usage-based | anything, integrations, mobile app | v1 in 7 days, weekly after |
 
@@ -44,7 +44,7 @@ The **"WhatsApp your Excel → 48-hour free demo"** hook is the key conversion i
 ## Part 2 — Homepage structure (top to bottom)
 
 1. **Sticky nav (light)**: logo · Software Menu · Pricing · How it works · For Startups · green "WhatsApp us" button. On mobile, a sticky bottom bar with WhatsApp + Call.
-2. **Hero**: H1 "Your business has outgrown Excel." Sub: "Get your own custom software — **live in 7 days, from ₹9,999**." Hinglish kicker: *"Excel mein business chalana band karo."* Primary CTA: **"WhatsApp your Excel → Free demo in 48 hrs"**. Secondary: "See price in 30 sec". Trust chips: ⚡ 7-day go-live · ₹ No hidden cost · 🛠 We do everything.
+2. **Hero**: H1 "Your business has outgrown Excel." Sub: "Get your own custom software — **live in 7 days, from ₹49,999**." Hinglish kicker: *"Excel mein business chalana band karo."* Primary CTA: **"WhatsApp your Excel → Free demo in 48 hrs"**. Secondary: "See price in 30 sec". Trust chips: ⚡ 7-day go-live · ₹ No hidden cost · 🛠 We do everything.
    Signature visual: an **animated spreadsheet that turns into an app dashboard** (grid cells rearrange into cards and charts), built in framer-motion.
 3. **"Sound familiar?" pain grid** (Hinglish-flavoured): "Kaunsi Excel file latest hai?", orders missed, stock mismatch, staff can't update from the shop floor, owner can't see today's numbers on the phone, file got corrupted.
 4. **Before → After strip**: Excel row vs. the same data as an app screen (the suit manufacturer example: order → fabric → cutting → stitching → delivery).
@@ -55,7 +55,7 @@ The **"WhatsApp your Excel → 48-hour free demo"** hook is the key conversion i
 9. **Case study**: the suit manufacturer (anonymised unless you get permission): "₹5–6 Cr business, 14 Excel sheets → 1 app", with 2–3 concrete before/after metrics you provide.
 10. **Guarantee band**: live in 7 days or 3 months free · your data is always yours · cancel anytime with a full export.
 11. **For Startups lane**: "Need an investor-demo MVP? Also 7 days." → `/lp/build`.
-12. **FAQ**: Is ₹9,999 real? What's the catch? What if I need changes later? Who hosts it? What if I stop paying? Do I need a computer? (No, it works on the phone.) Can you visit our office?
+12. **FAQ**: Is ₹49,999 real? What's the catch? What if I need changes later? Who hosts it? What if I stop paying? Do I need a computer? (No, it works on the phone.) Can you visit our office?
 13. **Final CTA + footer**: repeat the WhatsApp Excel CTA, phone, email, address.
 
 ---

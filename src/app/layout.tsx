@@ -22,11 +22,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
+    default: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
     template: "%s | BeOnline.club",
   },
   description:
-    "Still running your business on Excel? Get your own custom software — orders, stock, billing, staff — live in 7 days, from ₹9,999. We do everything.",
+    "Still running your business on Excel? Get your own custom software — orders, stock, billing, staff — live in 7 days, from ₹49,999. We do everything.",
   keywords: [
     "custom software for small business India",
     "Excel to software",
@@ -44,24 +44,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.beonline.club/",
-    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
+    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
     description:
-      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹9,999.",
+      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹49,999.",
     siteName: "BeOnline.club",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
+        alt: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹9,999",
+    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
     description:
-      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹9,999.",
+      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹49,999.",
     images: ["/og-image.png"],
   },
 };
@@ -86,7 +86,7 @@ export default function RootLayout({
               url: "https://www.beonline.club",
               logo: "https://www.beonline.club/favicon.ico",
               description:
-                "Affordable custom business software for Indian MSMEs and startups — live in 7 days, from ₹9,999.",
+                "Affordable custom business software for Indian MSMEs and startups — live in 7 days, from ₹49,999.",
               contactPoint: {
                 "@type": "ContactPoint",
                 email: "hello@beonline.club",

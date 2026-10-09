@@ -35,7 +35,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p {...fadeUp(0.16)} className="mt-6 max-w-xl text-lg text-ex-muted sm:text-xl">
-            Get your own custom software, <strong className="text-ex-ink">live in 7 days, starts from ₹9,999</strong>. We handle everything
+            Get your own custom software, <strong className="text-ex-ink">live in 7 days, starts from ₹49,999</strong>. We handle everything
             from understanding your work to training your staff. You just send us your Excel.
           </motion.p>
 

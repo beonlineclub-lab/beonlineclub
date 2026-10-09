@@ -9,8 +9,8 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "/pricing",
-  "Pricing — Custom Software from ₹9,999, Hosting & Support Included",
-  "Transparent pricing for custom business software: a one-time setup fee from ₹9,999 plus a small monthly fee that covers hosting, backups, updates and WhatsApp support. Build your estimate in 30 seconds."
+  "Pricing — Custom Software from ₹49,999, Hosting & Support Included",
+  "Transparent pricing for custom business software: a one-time setup fee from ₹49,999 plus a small monthly fee that covers hosting, backups, updates and WhatsApp support. Build your estimate in 30 seconds."
 );
 
 export default function PricingPage() {

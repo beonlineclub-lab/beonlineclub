@@ -42,7 +42,7 @@ export default function WhyBeOnlinePage() {
             </p>
             <p>
               <strong className="text-ex-ink">BeOnline exists to close that gap.</strong> We keep proven building blocks ready so
-              we can start at ₹9,999, go live in 7 days, and take care of everything technical for as long as you use the
+              we can start at ₹49,999, go live in 7 days, and take care of everything technical for as long as you use the
               software. You run your business, and we run your software.
             </p>
           </div>
