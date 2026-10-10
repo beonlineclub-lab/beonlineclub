@@ -7,8 +7,8 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "/software",
-  "Custom Business Software by Industry — Manufacturing, Trading, Clinics & More",
-  "Ready-to-customise software for garment manufacturers, traders, distributors, clinics, coaching institutes, restaurants, retail shops and service businesses. Live in 7 days, from ₹49,999."
+  "Business Software by Industry, Live in 7 Days",
+  "Custom software for garment makers, traders, clinics, coaching institutes, restaurants, retail and service businesses. Live in 7 days, from ₹49,999."
 );
 
 export default function SoftwarePage() {

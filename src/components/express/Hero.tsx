@@ -7,9 +7,10 @@ import { Highlight, WhatsAppButton } from "./ui";
 
 const chips = ["⚡ Live in 7 days", "₹ No hidden cost", "🛠 We do everything", "📱 Works on your phone"];
 
+// Slide only, no fade: the hero text stays visible in the server HTML, which keeps LCP fast.
 const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
+  initial: { y: 24 },
+  animate: { y: 0 },
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay },
 });
 

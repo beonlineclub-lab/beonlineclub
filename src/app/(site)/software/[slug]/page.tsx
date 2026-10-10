@@ -9,7 +9,8 @@ import FAQ from "@/components/express/FAQ";
 import FinalCTA from "@/components/express/FinalCTA";
 import { PageHero, SectionHeading, WhatsAppButton } from "@/components/express/ui";
 import { faqs, inr, kitBySlug, kits, modules } from "@/lib/express";
-import { SITE_URL, pageMeta } from "@/lib/seo";
+import JsonLd from "@/components/express/JsonLd";
+import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from "@/lib/seo";
 
 type Props = { params: { slug: string } };
 
@@ -22,8 +23,8 @@ export function generateMetadata({ params }: Props) {
   if (!kit) return {};
   return pageMeta(
     `/software/${kit.slug}`,
-    `${kit.seoTitle} — Live in 7 Days, from ${inr(kit.from)}`,
-    `${kit.blurb} Custom-built for your business by BeOnline, with hosting, backups and support included.`
+    kit.seoTitle!,
+    kit.blurb!
   );
 }
 
@@ -105,20 +106,22 @@ export default function KitPage({ params }: Props) {
       <FAQ items={faqs.slice(0, 5)} />
       <FinalCTA lead="Send your Excel today." highlight="See your software" tail="in 48 hours." message={message} />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: kit.seoTitle,
-            description: kit.blurb,
-            url: `${SITE_URL}/software/${kit.slug}`,
-            areaServed: "IN",
-            provider: { "@type": "Organization", name: "BeOnline.club", url: SITE_URL },
-            offers: { "@type": "Offer", price: kit.from, priceCurrency: "INR" },
+      <JsonLd
+        data={[
+          serviceJsonLd({
+            path: `/software/${kit.slug}`,
+            name: kit.seoTitle!,
+            serviceType: "Custom business software",
+            description: kit.blurb!,
+            audience: kit.name,
+            priceFrom: kit.from,
           }),
-        }}
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Software Menu", path: "/software" },
+            { name: kit.seoTitle!, path: `/software/${kit.slug}` },
+          ]),
+        ]}
       />
     </>
   );

@@ -8,8 +8,8 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "/why-beonline",
-  "Why BeOnline — Affordable, Reliable Software, With You Till the End",
-  "Free demo before you pay, tested building blocks, daily backups, one named contact, and support that never ends at go-live. Why Indian businesses trust BeOnline with their software."
+  "Why BeOnline: Affordable, Reliable Software",
+  "A free demo before you pay, tested building blocks, daily backups and one named contact. Why Indian businesses trust BeOnline with their software."
 );
 
 export default function WhyBeOnlinePage() {

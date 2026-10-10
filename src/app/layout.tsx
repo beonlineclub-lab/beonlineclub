@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import JsonLd from "@/components/express/JsonLd";
+import { EMAIL, WA_NUMBER } from "@/lib/express";
+import { DEFAULT_OG_IMAGE, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +39,7 @@ export const metadata: Metadata = {
     "business software in 7 days",
     "MSME software",
     "MVP development in 7 days",
+    "inventory software for amazon flipkart meesho sellers",
   ],
   metadataBase: new URL("https://www.beonline.club"),
   alternates: {
@@ -48,21 +52,15 @@ export const metadata: Metadata = {
     description:
       "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹49,999.",
     siteName: "BeOnline.club",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
-      },
-    ],
+    locale: "en_IN",
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
     description:
       "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹49,999.",
-    images: ["/og-image.png"],
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -72,33 +70,44 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+        <JsonLd
+          data={[
+            {
               "@context": "https://schema.org",
               "@type": "Organization",
+              "@id": ORG_ID,
               name: "BeOnline.club",
-              url: "https://www.beonline.club",
-              logo: "https://www.beonline.club/favicon.ico",
+              url: SITE_URL,
+              logo: `${SITE_URL}/logo.png`,
               description:
-                "Affordable custom business software for Indian MSMEs and startups — live in 7 days, from ₹49,999.",
+                "Affordable custom business software for Indian MSMEs, marketplace sellers and startups, live in 7 days, from ₹49,999.",
+              email: EMAIL,
+              telephone: `+${WA_NUMBER}`,
+              areaServed: { "@type": "Country", name: "India" },
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "hello@beonline.club",
-                contactType: "customer support",
-                availableLanguage: "English",
+                email: EMAIL,
+                telephone: `+${WA_NUMBER}`,
+                contactType: "sales",
+                areaServed: "IN",
+                availableLanguage: ["English", "Hindi"],
               },
-              sameAs: [
-                "https://www.instagram.com/beonline.club/",
-                "https://www.linkedin.com/in/beonline-club-5a617640b/",
-              ],
-            }),
-          }}
+              sameAs: ["https://www.instagram.com/beonline.club/", "https://www.linkedin.com/in/beonline-club-5a617640b/"],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              name: "BeOnline.club",
+              url: SITE_URL,
+              inLanguage: "en-IN",
+              publisher: { "@id": ORG_ID },
+            },
+          ]}
         />
         {children}
       </body>

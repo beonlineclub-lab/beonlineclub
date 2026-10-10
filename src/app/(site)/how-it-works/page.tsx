@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "/how-it-works",
-  "How It Works — From Excel to Your Own Software in 7 Days",
+  "How It Works: Excel to Software in 7 Days",
   "Send your Excel on WhatsApp, get a free demo in 48 hours, and go live in 7 days. See exactly what happens each day when BeOnline builds your business software."
 );
 

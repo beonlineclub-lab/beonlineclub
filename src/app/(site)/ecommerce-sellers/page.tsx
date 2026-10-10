@@ -22,17 +22,51 @@ import {
 } from "@/lib/ecommerce";
 import { sellerCase } from "@/lib/caseStudies";
 import { waLink } from "@/lib/express";
-import { pageMeta } from "@/lib/seo";
+import JsonLd from "@/components/express/JsonLd";
+import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from "@/lib/seo";
 
-export const metadata = pageMeta(
-  "/ecommerce-sellers",
-  "Inventory & Order Software for Amazon, Flipkart, Myntra & Meesho Sellers",
-  "One live stock count across every marketplace, a dispatch SLA board, returns and payment reconciliation. Custom-built around your team, live in 7 days. Free demo with your own SKUs."
-);
+const DESCRIPTION =
+  "Inventory and order software for Amazon, Flipkart, Myntra and Meesho sellers: one live stock count, no missed SLAs, returns and payouts reconciled. Live in 7 days.";
+
+export const metadata = {
+  ...pageMeta("/ecommerce-sellers", "Inventory Software for Amazon, Flipkart & Meesho", DESCRIPTION, {
+    url: "/og/ecommerce-sellers.jpg",
+    width: 1200,
+    height: 630,
+    alt: "BeOnline.club for Amazon, Flipkart, Myntra and Meesho sellers: stop running your store on Excel. One live stock, no missed dispatch deadlines, returns and payouts reconciled. Live in 7 days.",
+  }),
+  keywords: [
+    "inventory management software for amazon sellers",
+    "flipkart seller inventory software",
+    "meesho inventory management",
+    "myntra seller software",
+    "multichannel inventory management software india",
+    "ecommerce order management software india",
+    "marketplace seller software",
+    "sla breach dispatch tracking",
+    "rto returns reconciliation",
+  ],
+};
 
 export default function EcommerceSellersPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          serviceJsonLd({
+            path: "/ecommerce-sellers",
+            name: "Inventory & order software for marketplace sellers",
+            serviceType: "Multichannel inventory management software",
+            description: DESCRIPTION,
+            audience: "Sellers on Amazon, Flipkart, Myntra and Meesho",
+            priceFrom: 49999,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "For marketplace sellers", path: "/ecommerce-sellers" },
+          ]),
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24">
         <div className="pointer-events-none absolute -top-40 -right-40 h-[480px] w-[480px] rounded-full bg-ex-yellow/30 blur-3xl" aria-hidden />
