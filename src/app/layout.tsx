@@ -3,7 +3,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/express/JsonLd";
 import { EMAIL, WA_NUMBER } from "@/lib/express";
-import { DEFAULT_OG_IMAGE, ORG_ID, SITE_URL } from "@/lib/seo";
+import { ADDRESS, DEFAULT_OG_IMAGE, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,17 +30,6 @@ export const metadata: Metadata = {
   },
   description:
     "Still running your business on Excel? Get your own custom software — orders, stock, billing, staff — live in 7 days, from ₹49,999. We do everything.",
-  keywords: [
-    "custom software for small business India",
-    "Excel to software",
-    "billing and inventory software for manufacturers",
-    "garment manufacturing software",
-    "affordable software development company India",
-    "business software in 7 days",
-    "MSME software",
-    "MVP development in 7 days",
-    "inventory software for amazon flipkart meesho sellers",
-  ],
   metadataBase: new URL("https://www.beonline.club"),
   alternates: {
     canonical: "/",
@@ -78,16 +67,23 @@ export default function RootLayout({
           data={[
             {
               "@context": "https://schema.org",
-              "@type": "Organization",
+              // ProfessionalService is a LocalBusiness type, so this one node carries the local signals too.
+              "@type": ["Organization", "ProfessionalService"],
               "@id": ORG_ID,
               name: "BeOnline.club",
               url: SITE_URL,
               logo: `${SITE_URL}/logo.png`,
+              image: `${SITE_URL}${DEFAULT_OG_IMAGE.url}`,
               description:
                 "Affordable custom business software for Indian MSMEs, marketplace sellers and startups, live in 7 days, from ₹49,999.",
               email: EMAIL,
               telephone: `+${WA_NUMBER}`,
-              areaServed: { "@type": "Country", name: "India" },
+              address: ADDRESS,
+              priceRange: "₹49,999+",
+              areaServed: [
+                { "@type": "Country", name: "India" },
+                { "@type": "City", name: "Bengaluru" },
+              ],
               contactPoint: {
                 "@type": "ContactPoint",
                 email: EMAIL,

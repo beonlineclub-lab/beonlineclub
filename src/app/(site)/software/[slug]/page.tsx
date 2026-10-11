@@ -8,7 +8,7 @@ import Trust from "@/components/express/Trust";
 import FAQ from "@/components/express/FAQ";
 import FinalCTA from "@/components/express/FinalCTA";
 import { PageHero, SectionHeading, WhatsAppButton } from "@/components/express/ui";
-import { faqs, inr, kitBySlug, kits, modules } from "@/lib/express";
+import { BASE_SETUP, faqs, inr, kitBySlug, kitModules, kitPrice, kits } from "@/lib/express";
 import JsonLd from "@/components/express/JsonLd";
 import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from "@/lib/seo";
 
@@ -32,7 +32,8 @@ export default function KitPage({ params }: Props) {
   const kit = kitBySlug(params.slug);
   if (!kit) notFound();
 
-  const kitModules = modules.filter((m) => kit.modules?.includes(m.id));
+  const offered = kitModules(kit);
+  const included = offered.filter((m) => kit.modules?.includes(m.id));
   const message = `Hi BeOnline! I'm interested in ${kit.seoTitle}. Can I get a free demo? I'll share my Excel sheets here.`;
   const others = kits.filter((k) => k.slug && k.slug !== kit.slug);
 
@@ -49,7 +50,7 @@ export default function KitPage({ params }: Props) {
       >
         <WhatsAppButton label="Get a free demo" message={message} />
         <span className="font-semibold text-ex-muted">
-          from <strong className="font-grotesk text-xl text-ex-ink">{inr(kit.from)} / month</strong>
+          full kit <strong className="font-grotesk text-xl text-ex-ink">{inr(kitPrice(kit))}</strong> one-time
         </span>
       </PageHero>
 
@@ -68,7 +69,7 @@ export default function KitPage({ params }: Props) {
               </ul>
             </div>
             <ul className="grid gap-3 sm:grid-cols-2">
-              {kitModules.map((m) => (
+              {included.map((m) => (
                 <li key={m.id} className="rounded-2xl border border-ex-line bg-white p-5">
                   <h3 className="font-grotesk font-bold text-ex-ink">{m.name}</h3>
                   <p className="mt-1 text-sm text-ex-muted">{m.hint}</p>
@@ -85,7 +86,7 @@ export default function KitPage({ params }: Props) {
 
       <SevenDayTracker moreHref="/how-it-works" />
       {kit.slug === "garment-manufacturing-software" && <CaseStudy />}
-      <Configurator initial={kit.modules} title={`Price your ${kit.name.toLowerCase()} software`} />
+      <Configurator initial={kit.modules} options={offered} title={`Price your ${kit.seoTitle!.toLowerCase()}`} />
       <Trust />
 
       <section className="pb-8">
@@ -114,7 +115,7 @@ export default function KitPage({ params }: Props) {
             serviceType: "Custom business software",
             description: kit.blurb!,
             audience: kit.name,
-            priceFrom: kit.from,
+            priceFrom: BASE_SETUP,
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },

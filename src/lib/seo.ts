@@ -12,9 +12,20 @@ export const DEFAULT_OG_IMAGE = {
 
 type OgImage = typeof DEFAULT_OG_IMAGE;
 
+// Service-area business: city and state only, no street address (matches the Google Business Profile).
+export const ADDRESS = {
+  "@type": "PostalAddress",
+  addressLocality: "Bengaluru",
+  addressRegion: "Karnataka",
+  addressCountry: "IN",
+};
+export const CITY_DISPLAY = "Bengaluru, Karnataka";
+
 // Per-page metadata. Keep titles under ~45 characters: the " | BeOnline.club" suffix is added,
 // and Google cuts titles at about 60. Keep descriptions under ~155 characters. with a canonical URL and matching Open Graph/Twitter tags.
-export function pageMeta(path: string, title: string, description: string, image: OgImage = DEFAULT_OG_IMAGE): Metadata {
+// Pages without their own image reuse the home image, captioned with the page's own title.
+export function pageMeta(path: string, title: string, description: string, image?: OgImage): Metadata {
+  image ??= { ...DEFAULT_OG_IMAGE, alt: `${title} | BeOnline.club` };
   return {
     title,
     description,

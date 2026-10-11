@@ -13,6 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/startups", 0.9],
     ["/ecommerce-sellers", 0.9],
     ["/why-beonline", 0.8],
+    ["/contact", 0.6],
+    ["/privacy", 0.3],
+    ["/terms", 0.3],
   ];
   return [
     ...pages.map(([path, priority]) => ({ url: `${SITE_URL}${path}`, lastModified: now, changeFrequency: "monthly" as const, priority })),

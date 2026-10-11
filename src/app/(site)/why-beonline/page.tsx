@@ -18,7 +18,7 @@ export default function WhyBeOnlinePage() {
       <PageHero
         kicker="Why BeOnline"
         title="We don't disappear after go-live. We're with you till the end."
-        sub="Cheap software that breaks is the most expensive kind. Here's how we make sure yours keeps working for years."
+        sub="Custom business software for Indian small businesses, built to keep working for years. Cheap software that breaks is the most expensive kind, so here's how we look after yours."
       >
         <WhatsAppButton label="Talk to us on WhatsApp" />
       </PageHero>

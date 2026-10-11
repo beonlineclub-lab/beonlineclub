@@ -9,7 +9,7 @@ export default function Pricing({ moreHref }: { moreHref?: string }) {
         <SectionHeading
           kicker="Simple pricing"
           title="From a 5-person shop to a 500-person factory."
-          sub="Software worth ₹10 thousand to ₹10 crore. A small one-time setup fee, then a monthly fee you can cancel anytime."
+          sub="Plans start at ₹49,999 one-time, then a monthly fee you can cancel anytime. Bigger operations get a custom quote."
         />
 
         <div className="grid gap-5 lg:grid-cols-3">

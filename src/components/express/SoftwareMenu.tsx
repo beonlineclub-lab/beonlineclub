@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Clock } from "lucide-react";
-import { inr, kits, waLink } from "@/lib/express";
+import { inr, kitPrice, kits, waLink } from "@/lib/express";
 import { MoreLink, SectionHeading } from "./ui";
 
 export default function SoftwareMenu({ showHeading = true, moreHref }: { showHeading?: boolean; moreHref?: string }) {
@@ -47,7 +47,7 @@ export default function SoftwareMenu({ showHeading = true, moreHref }: { showHea
               </ul>
               <div className="mt-5 border-t border-ex-line pt-4">
                 <span className="text-sm text-ex-muted">
-                  from <strong className="font-grotesk text-lg text-ex-ink">{inr(k.from)}</strong>
+                  {k.modules ? "full kit" : "from"} <strong className="font-grotesk text-lg text-ex-ink">{inr(kitPrice(k))}</strong> one-time
                 </span>
                 <div className="mt-3 flex items-center justify-between gap-2 text-sm font-bold">
                   {k.slug ? (

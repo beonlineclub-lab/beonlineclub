@@ -2,26 +2,21 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Check, Truck } from "lucide-react";
-import {
-  BASE_MONTHLY,
-  BASE_SETUP,
-  DELIVERY_DAYS,
-  STARTER_INCLUDED,
-  inr,
-  modules,
-} from "@/lib/express";
+import { DELIVERY_DAYS, STARTER_INCLUDED, estimate, inr, modules, type Module } from "@/lib/express";
 import { SectionHeading, WhatsAppButton } from "./ui";
 
-const paid = modules.filter((m) => !m.core);
 const core = modules.filter((m) => m.core);
 
 export default function Configurator({
   initial = ["orders", "inventory", "billing"],
   title = "Build your software. See the price instantly.",
+  options = modules,
 }: {
   initial?: string[];
   title?: string;
+  options?: Module[]; // modules to offer, e.g. an industry kit's own list and wording
 }) {
+  const paid = options.filter((m) => !m.core);
   const [picked, setPicked] = useState<string[]>(initial);
   const [liveBy, setLiveBy] = useState("");
 
@@ -35,16 +30,7 @@ export default function Configurator({
   const toggle = (id: string) =>
     setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
 
-  const { setup, monthly, extras } = useMemo(() => {
-    // The base plan covers the priciest STARTER_INCLUDED modules; the rest are add-ons.
-    const chosen = paid.filter((m) => picked.includes(m.id)).sort((a, b) => b.setup - a.setup);
-    const addOns = chosen.slice(STARTER_INCLUDED);
-    return {
-      setup: BASE_SETUP + addOns.reduce((s, m) => s + m.setup, 0),
-      monthly: BASE_MONTHLY + addOns.reduce((s, m) => s + m.monthly, 0),
-      extras: addOns.length,
-    };
-  }, [picked]);
+  const { setup, monthly, extras } = useMemo(() => estimate(picked), [picked]);
 
   const names = paid.filter((m) => picked.includes(m.id)).map((m) => m.name);
   const message =

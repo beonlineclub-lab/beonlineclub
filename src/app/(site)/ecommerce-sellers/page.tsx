@@ -35,17 +35,6 @@ export const metadata = {
     height: 630,
     alt: "BeOnline.club for Amazon, Flipkart, Myntra and Meesho sellers: stop running your store on Excel. One live stock, no missed dispatch deadlines, returns and payouts reconciled. Live in 7 days.",
   }),
-  keywords: [
-    "inventory management software for amazon sellers",
-    "flipkart seller inventory software",
-    "meesho inventory management",
-    "myntra seller software",
-    "multichannel inventory management software india",
-    "ecommerce order management software india",
-    "marketplace seller software",
-    "sla breach dispatch tracking",
-    "rto returns reconciliation",
-  ],
 };
 
 export default function EcommerceSellersPage() {
@@ -59,7 +48,7 @@ export default function EcommerceSellersPage() {
             serviceType: "Multichannel inventory management software",
             description: DESCRIPTION,
             audience: "Sellers on Amazon, Flipkart, Myntra and Meesho",
-            priceFrom: 49999,
+            priceFrom: 79999,
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
