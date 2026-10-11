@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Clock } from "lucide-react";
-import { inr, kitPrice, kits, waLink } from "@/lib/express";
+import { kits, waLink } from "@/lib/express";
 import { MoreLink, SectionHeading } from "./ui";
 
 export default function SoftwareMenu({ showHeading = true, moreHref }: { showHeading?: boolean; moreHref?: string }) {
