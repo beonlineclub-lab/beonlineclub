@@ -49,9 +49,9 @@ export default function KitPage({ params }: Props) {
         sub={kit.blurb!}
       >
         <WhatsAppButton label="Get a free demo" message={message} />
-        <span className="font-semibold text-ex-muted">
-          full kit <strong className="font-grotesk text-xl text-ex-ink">{inr(kitPrice(kit))}</strong> one-time
-        </span>
+        {/* <span className="font-semibold text-ex-muted">
+          full kit <strong className="font-grotesk text-xl text-ex-ink">{inr(kitPrice(kit))}</strong> one-time & monthly as per your usage
+        </span> */}
       </PageHero>
 
       <section className="pb-16 sm:pb-24">

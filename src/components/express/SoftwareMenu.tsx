@@ -46,9 +46,9 @@ export default function SoftwareMenu({ showHeading = true, moreHref }: { showHea
                 ))}
               </ul>
               <div className="mt-5 border-t border-ex-line pt-4">
-                <span className="text-sm text-ex-muted">
+                {/* <span className="text-sm text-ex-muted">
                   {k.modules ? "full kit" : "from"} <strong className="font-grotesk text-lg text-ex-ink">{inr(kitPrice(k))}</strong> one-time
-                </span>
+                </span> */}
                 <div className="mt-3 flex items-center justify-between gap-2 text-sm font-bold">
                   {k.slug ? (
                     <Link href={`/software/${k.slug}`} className="inline-flex items-center gap-1 text-ex-muted hover:text-ex-ink">

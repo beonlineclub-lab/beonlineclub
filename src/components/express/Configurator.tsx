@@ -45,7 +45,7 @@ export default function Configurator({
         <SectionHeading
           kicker="See your price in 30 seconds"
           title={title}
-          sub="Tick what your business needs. No sales call is needed to know the cost."
+          sub="Tick what your business needs. No sales call is needed to get the pricing idea."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
