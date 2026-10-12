@@ -52,7 +52,7 @@ export const modules: Module[] = [
   { id: "whatsapp", name: "WhatsApp alerts", hint: "Automatic updates to customers and staff", setup: 15000, monthly: 1500 },
 ];
 
-export const BASE_SETUP = 49999;
+export const BASE_SETUP = 79999;
 export const BASE_MONTHLY = 4999;
 export const STARTER_INCLUDED = 3; // modules included in the ₹49,999 base
 export const DELIVERY_DAYS = 7;
@@ -158,8 +158,8 @@ export const kits: Kit[] = [
     items: ["Orders & KOT", "Recipe-wise stock", "Daily sales", "Vendor purchases"],
     seoTitle: "Restaurant & Cloud Kitchen Software",
     blurb: "Orders and KOTs, recipe-wise stock that reduces itself as you cook, daily sales and vendor purchases, all on your phone.",
-    modules: ["orders", "inventory", "vendors", "reports", "staff"],
-    optional: ["billing", "customers", "whatsapp"],
+    modules: ["orders", "inventory", "vendors", "reports"],
+    optional: ["staff", "billing", "customers", "whatsapp"],
     labels: {
       orders: { name: "Orders & KOT", hint: "Dine-in, takeaway and online orders with kitchen tickets" },
       inventory: { name: "Recipe-wise stock", hint: "Ingredients reduce as dishes are sold" },

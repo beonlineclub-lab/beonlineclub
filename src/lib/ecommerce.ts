@@ -88,8 +88,8 @@ export const sellerPlans = [
   {
     name: "Growing Seller",
     tag: "Up to 100 orders a day",
-    price: "₹79,999",
-    monthly: "+ ₹4,999 / month",
+    price: "₹89,999",
+    monthly: "+ ₹6,999 / month",
     points: [
       "Up to 3 marketplaces",
       "Single stock master & SKU mapping",
