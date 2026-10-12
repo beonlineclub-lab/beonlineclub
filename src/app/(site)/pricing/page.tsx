@@ -5,12 +5,13 @@ import Comparison from "@/components/express/Comparison";
 import FAQ from "@/components/express/FAQ";
 import FinalCTA from "@/components/express/FinalCTA";
 import { PageHero } from "@/components/express/ui";
+import { BASE_SETUP, inr } from "@/lib/express";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "/pricing",
-  "Pricing: Custom Business Software from ₹49,999",
-  "Custom business software from ₹49,999 one-time, plus a small monthly fee for hosting, backups, updates and WhatsApp support. Estimate your price in 30 seconds."
+  `Pricing: Custom Business Software from ${inr(BASE_SETUP)}`,
+  `Custom business software from ${inr(BASE_SETUP)} one-time, plus a small monthly fee for hosting, backups, updates and WhatsApp support. Estimate your price in 30 seconds.`
 );
 
 export default function PricingPage() {

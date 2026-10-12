@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import ExcelToApp from "./ExcelToApp";
 import { Highlight, WhatsAppButton } from "./ui";
+import { BASE_SETUP, inr } from "@/lib/express";
 
 const chips = ["⚡ Live in 7 days", "₹ No hidden cost", "🛠 We do everything", "📱 Works on your phone"];
 
@@ -36,7 +37,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p {...fadeUp(0.16)} className="mt-6 max-w-xl text-lg text-ex-muted sm:text-xl">
-            Get your own custom software, <strong className="text-ex-ink">live in 7 days, starts from ₹49,999</strong>. We handle everything
+            Get your own custom software, <strong className="text-ex-ink">live in 7 days, starts from {inr(BASE_SETUP)}</strong>. We handle everything
             from understanding your work to training your staff. You just send us your Excel.
           </motion.p>
 
@@ -46,7 +47,7 @@ export default function Hero() {
               href="#price"
               className="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-4 font-grotesk font-bold text-ex-ink underline-offset-4 hover:underline"
             >
-              See your price in 30 sec <ArrowRight size={18} />
+              Estimate your price in 30 sec <ArrowRight size={18} />
             </a>
           </motion.div>
 

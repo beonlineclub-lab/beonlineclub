@@ -13,19 +13,38 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms of Service"
-      updated="11 October 2026"
-      intro={`These terms apply when you use BeOnline.club (“BeOnline”, “we”), based in ${CITY_DISPLAY}, India, to build and run software for your business. Your written quote for scope, price and timeline forms part of these terms.`}
+      updated="12 October 2026"
+      intro={`These terms apply when you use BeOnline.club (“BeOnline”, “we”), based in ${CITY_DISPLAY}, India, to build and run software for your business. The agreement we sign with you for your project forms part of these terms.`}
       sections={[
         {
           h: "Free demo",
           body: <p>The demo is free and you are under no obligation to buy. You pay nothing until you approve it.</p>,
         },
         {
+          h: "Prices on this website are estimates",
+          body: (
+            <>
+              <p>
+                All prices on this website, including plan prices, kit prices and the price calculator, are approximate. They are there
+                to give you an idea of the budget to plan for. They are not a quote or an offer.
+              </p>
+              <p>
+                Your actual cost depends on the scope and complexity of your project, which we understand after our first discussion
+                with you. We then share a quote for your project, which can be discussed and negotiated, including any discounts.
+              </p>
+              <p>
+                The final cost and payment plan are binding only once both of us sign a written agreement.
+              </p>
+            </>
+          ),
+        },
+        {
           h: "Scope, price and timeline",
           body: (
             <p>
-              Before you pay, we agree the first version&apos;s scope, the one-time setup fee, the monthly fee and the go-live date in
-              writing. Go-live in 7 days assumes the agreed scope and that you share your data and approvals on time.
+              Before you pay, we agree the first version&apos;s scope, the one-time setup fee, the monthly fee, the payment plan and the
+              go-live date in a written agreement signed by both of us. Go-live in 7 days assumes the agreed scope and that you share
+              your data and approvals on time.
             </p>
           ),
         },
@@ -33,7 +52,7 @@ export default function TermsPage() {
           h: "Payments",
           body: (
             <p>
-              The one-time setup fee is paid when you approve the demo and scope. The monthly fee covers hosting, backups, security,
+              The one-time setup fee is paid as set out in the payment plan in your agreement. The monthly fee covers hosting, backups, security,
               weekly updates and WhatsApp support, and is billed in advance each month. Prices are in Indian rupees; GST is added where
               applicable.
             </p>

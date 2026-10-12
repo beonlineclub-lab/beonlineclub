@@ -54,7 +54,7 @@ export const modules: Module[] = [
 
 export const BASE_SETUP = 79999;
 export const BASE_MONTHLY = 4999;
-export const STARTER_INCLUDED = 3; // modules included in the ₹49,999 base
+export const STARTER_INCLUDED = 3; // modules included in the base price
 export const DELIVERY_DAYS = 7;
 
 // ─── Price estimate ───────────────────────────────────────────────────────────
@@ -238,8 +238,8 @@ export const plans = [
   {
     name: "Grow",
     tag: "Most popular for growing businesses",
-    setup: "₹59,999",
-    monthly: "₹6,999/mo",
+    setup: "From ₹1.5L",
+    monthly: "₹8,999/mo",
     live: "First version in 7 days",
     points: [
       "5–8 business workflows",
@@ -254,7 +254,7 @@ export const plans = [
   {
     name: "Scale",
     tag: "Factories, multi-branch & complex operations",
-    setup: "From ₹1.5L",
+    setup: "From ₹2L",
     monthly: "Custom",
     live: "Phased implementation",
     points: [
@@ -299,7 +299,7 @@ export const commitments = [
 export const comparison = {
   cols: ["BeOnline", "Typical software company", "Freelancer"],
   rows: [
-    { k: "Starting price", v: ["₹49,999", "₹5 lakh+", "Low, but unpredictable"] },
+    { k: "Starting price", v: [inr(BASE_SETUP), "₹5 lakh+", "Low, but unpredictable"] },
     { k: "First working version", v: ["7 days", "3–6 months", "Depends on the person"] },
     { k: "Free demo before paying", v: ["Yes", "Rarely", "Rarely"] },
     { k: "Hosting, backups & security", v: ["Included", "Separate contract", "Usually your problem"] },
@@ -327,8 +327,8 @@ export const needFromYou = [
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 export const faqs = [
   {
-    q: "Is ₹" + BASE_SETUP.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " really the price?",
-    a: "Yes. ₹" + BASE_SETUP.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " one-time plus ₹" + BASE_MONTHLY.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " a month gets you a working software with up to 3 modules and 5 users. Bigger needs cost more, and you see the exact price before you pay anything.",
+    q: `Is ${inr(BASE_SETUP)} really the price?`,
+    a: `Yes, if you go with exactly the same specifications: ${inr(BASE_SETUP)} one-time plus ${inr(BASE_MONTHLY)} a month for up to ${STARTER_INCLUDED} modules and 5 users. If your needs differ, there may be a small addition, but nothing out of the box. Your final price is agreed in writing before you pay anything.`,
   },
   {
     q: "How can you deliver in 7 days?",

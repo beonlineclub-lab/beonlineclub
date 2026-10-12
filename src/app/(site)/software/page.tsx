@@ -3,12 +3,13 @@ import ModuleLibrary from "@/components/express/ModuleLibrary";
 import Configurator from "@/components/express/Configurator";
 import FinalCTA from "@/components/express/FinalCTA";
 import { PageHero, WhatsAppButton } from "@/components/express/ui";
+import { BASE_SETUP, inr } from "@/lib/express";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta(
   "/software",
   "Business Software by Industry, Live in 7 Days",
-  "Custom software for garment makers, traders, clinics, coaching institutes, restaurants, retail and service businesses. Live in 7 days, from ₹49,999."
+  `Custom software for garment makers, traders, clinics, coaching institutes, restaurants, retail and service businesses. Live in 7 days, from ${inr(BASE_SETUP)}.`
 );
 
 export default function SoftwarePage() {

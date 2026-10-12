@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BASE_SETUP, inr } from "./express";
 
 export const SITE_URL = "https://www.beonline.club";
 
@@ -7,7 +8,7 @@ export const DEFAULT_OG_IMAGE = {
   url: "/og/home.jpg",
   width: 1200,
   height: 630,
-  alt: "BeOnline.club: your business has outgrown Excel. Custom software for Indian businesses, live in 7 days, from ₹49,999.",
+  alt: `BeOnline.club: your business has outgrown Excel. Custom software for Indian businesses, live in 7 days, from ${inr(BASE_SETUP)}.`,
 };
 
 type OgImage = typeof DEFAULT_OG_IMAGE;

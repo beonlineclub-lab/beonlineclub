@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Zap } from "lucide-react";
-import { EMAIL, PHONE_DISPLAY, PHONE_LINK, kits } from "@/lib/express";
+import { BASE_SETUP, EMAIL, PHONE_DISPLAY, PHONE_LINK, inr, kits } from "@/lib/express";
 import { CITY_DISPLAY } from "@/lib/seo";
 
 const company = [
@@ -27,7 +27,7 @@ export default function SiteFooter() {
             </span>
           </Link>
           <p className="mt-4 max-w-xs text-sm text-ex-muted">
-            Affordable custom software, delivered express. From ₹49,999, live in 7 days, and with you till the end.
+            Affordable custom software, delivered express. From {inr(BASE_SETUP)}, live in 7 days, and with you till the end.
           </p>
           <div className="mt-4 space-y-1 text-sm">
             <a href={PHONE_LINK} className="block font-semibold text-ex-ink hover:underline">{PHONE_DISPLAY}</a>

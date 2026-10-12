@@ -16,7 +16,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta(
   "/startups",
   "MVP Development in 7 Days for Startups",
-  "Get a working, deployed MVP in 7 days for your investor demo or first users. Daily preview links, a fixed price per sprint, and 100% code ownership. From ₹49,999."
+  "Get a working, deployed MVP in 7 days for your investor demo or first users. Daily preview links, a fixed price per sprint, and 100% code ownership. From ₹89,999."
 );
 
 export default function StartupsPage() {

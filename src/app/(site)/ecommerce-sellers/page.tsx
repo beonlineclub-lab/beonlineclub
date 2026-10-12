@@ -48,7 +48,7 @@ export default function EcommerceSellersPage() {
             serviceType: "Multichannel inventory management software",
             description: DESCRIPTION,
             audience: "Sellers on Amazon, Flipkart, Myntra and Meesho",
-            priceFrom: 79999,
+            priceFrom: 89999,
           }),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },

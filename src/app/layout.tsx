@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/express/JsonLd";
-import { EMAIL, WA_NUMBER } from "@/lib/express";
+import { BASE_SETUP, EMAIL, WA_NUMBER, inr } from "@/lib/express";
 import { ADDRESS, DEFAULT_OG_IMAGE, ORG_ID, SITE_URL } from "@/lib/seo";
 
 const inter = Inter({
@@ -25,11 +25,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
+    default: `BeOnline.club — Custom Business Software in 7 Days, from ${inr(BASE_SETUP)}`,
     template: "%s | BeOnline.club",
   },
   description:
-    "Still running your business on Excel? Get your own custom software — orders, stock, billing, staff — live in 7 days, from ₹49,999. We do everything.",
+    `Still running your business on Excel? Get your own custom software — orders, stock, billing, staff — live in 7 days, from ${inr(BASE_SETUP)}. We do everything.`,
   metadataBase: new URL("https://www.beonline.club"),
   alternates: {
     canonical: "/",
@@ -37,18 +37,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.beonline.club/",
-    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
+    title: `BeOnline.club — Custom Business Software in 7 Days, from ${inr(BASE_SETUP)}`,
     description:
-      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹49,999.",
+      `Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ${inr(BASE_SETUP)}.`,
     siteName: "BeOnline.club",
     locale: "en_IN",
     images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BeOnline.club — Custom Business Software in 7 Days, from ₹49,999",
+    title: `BeOnline.club — Custom Business Software in 7 Days, from ${inr(BASE_SETUP)}`,
     description:
-      "Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ₹49,999.",
+      `Send us your Excel on WhatsApp. Get a free demo in 48 hours and your own software live in 7 days — from ${inr(BASE_SETUP)}.`,
     images: [DEFAULT_OG_IMAGE],
   },
 };
@@ -75,11 +75,11 @@ export default function RootLayout({
               logo: `${SITE_URL}/logo.png`,
               image: `${SITE_URL}${DEFAULT_OG_IMAGE.url}`,
               description:
-                "Affordable custom business software for Indian MSMEs, marketplace sellers and startups, live in 7 days, from ₹49,999.",
+                `Affordable custom business software for Indian MSMEs, marketplace sellers and startups, live in 7 days, from ${inr(BASE_SETUP)}.`,
               email: EMAIL,
               telephone: `+${WA_NUMBER}`,
               address: ADDRESS,
-              priceRange: "₹49,999+",
+              priceRange: `${inr(BASE_SETUP)}+`,
               areaServed: [
                 { "@type": "Country", name: "India" },
                 { "@type": "City", name: "Bengaluru" },

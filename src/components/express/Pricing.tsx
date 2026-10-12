@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { included, plans, waLink } from "@/lib/express";
+import { BASE_SETUP, included, inr, plans, waLink } from "@/lib/express";
 import { MoreLink, SectionHeading } from "./ui";
 
 export default function Pricing({ moreHref }: { moreHref?: string }) {
@@ -9,7 +9,7 @@ export default function Pricing({ moreHref }: { moreHref?: string }) {
         <SectionHeading
           kicker="Simple pricing"
           title="From a 5-person shop to a 500-person factory."
-          sub="Plans start at ₹49,999 one-time, then a monthly fee you can cancel anytime. Bigger operations get a custom quote."
+          sub={`Plans start at ${inr(BASE_SETUP)} one-time, then a monthly fee you can cancel anytime. Prices are approximate: your final price is agreed in writing after we understand your needs.`}
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
